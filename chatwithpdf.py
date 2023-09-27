@@ -49,7 +49,7 @@ vectordb.persist()
 # create the conversation and loop
 
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
-pdf_chat = ConversationalRetrievalChain.from_llm(OpenAI(temperature=0.8) , vectordb.as_retriever(), memory=memory)
+pdf_chat = ConversationalRetrievalChain.from_llm(OpenAI(temperature=0.0) , vectordb.as_retriever(), memory=memory)
 while True:
     line = input("Enter a question: ")
     if line == "":
